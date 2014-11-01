@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+  <meta charset="utf-8">
+  <title>MadLibs</title>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	
+<header class='head'>
+  <div class='title left'>
+	 <img src='http://colouringbook.org/links/colouringbook.org/TwentyEight/face_smile_black_white_line_art-555px.png'>
+  </div>
+  <div class='title right'>
+    <h1> <img src="http://www.michael-whelan.net/thinkful-angular-ngMadLibs/assets/images/ng-mad-libs-logo.png"> </h1>
+    <h1> AutoMate This!</h1>
+
+  </div>
+</header>
+<!-- using ng-model for inputs and ng-init to fill the input boxes -->
+
+<section class='userInput'>
+<p> Provide the following words</p>
+  <div class='response' >
+    <input type='text' ng-model="female" ng-init="female='female name'" placeholder='female name'>
+    <input type='text' ng-model="job" ng-init="job='job title'" placeholder='job title'>
+    <input type='text' ng-model="tedious" ng-init="tedious='tedious task' " placeholder='tedious task'>
+  </div>
+  <div class='response'> 
+  <input type='text' ng-model="dirty" ng-init="dirty='dirty task'">
+    <input type='text' ng-model="celebrity" ng-init="celebrity='celebrity'">
+    <input type='text' ng-model="useless" ng-init="useless='Useless Skill'">
+  </div>
+  <div class='response'> 
+
+    <input type='text' ng-model="obnoxious" ng-init="obnoxious='obnoxious celebrity'">
+    <input type='text' ng-model="huge" ng-init="huge='huge'">
+    <input type='text' ng-model="adjective" ng-init="adjective='adjective'">
+  </div>
+	
+</section>
+
+<!-- placed span along the markup so that I could change the background color. -->
+
+<section class='userOutput'>
+	<p>  <span>{{female}}</span> was a {{job}} who loved technology. Although she loved parts of her job, she absolutely hated  <span>{{tedious}} </span> and <span>{{dirty}}</span>. So, {{female}} met with her life mentor <span>{{celebrity}}</span> who told her to learn how to <span>{{useless}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{useless}}</span> so she studied programming instead. 
+ </p>
+
+	<p>What a great decision! With her new skills, <span>{{female}} </span>built a(n) <span> {{adjective}} </span> robot named <span>{{obnoxious}}</span> that not only loved {{dirty}} but did it <span>{{huge}}</span> faster. </p>
+</section>
+
+<footer>
+  
+</footer>
+
+  
+ <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+
+
+</body>
+</html>
