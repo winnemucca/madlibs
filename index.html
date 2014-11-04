@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="">
+<!-- <html lang="en" ng-app=""> -->
+<html lang="en" ng-app="myApp">
+
+
 <head>
   <meta charset="utf-8">
   <title>MadLibs</title>
   <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
-<body>
+<!-- <body ng-controller="Naming"> -->
+
+<body ng-controller="NamingController as namectrl">
 	
 <header class='head'>
   <div class='title left'>
@@ -20,42 +25,54 @@
 </header>
 <!-- using ng-model for inputs and ng-init to fill the input boxes -->
 
-<section class='userInput'>
-<p> Provide the following words</p>
-  <div class='response' >
-    <input type='text' ng-model="female" ng-init="female='female name'" placeholder='female name'>
-    <input type='text' ng-model="job" ng-init="job='job title'" placeholder='job title'>
-    <input type='text' ng-model="tedious" ng-init="tedious='tedious task' " placeholder='tedious task'>
-  </div>
-  <div class='response'> 
-  <input type='text' ng-model="dirty" ng-init="dirty='dirty task'">
-    <input type='text' ng-model="celebrity" ng-init="celebrity='celebrity'">
-    <input type='text' ng-model="useless" ng-init="useless='Useless Skill'">
-  </div>
-  <div class='response'> 
 
-    <input type='text' ng-model="obnoxious" ng-init="obnoxious='obnoxious celebrity'">
-    <input type='text' ng-model="huge" ng-init="huge='huge'">
-    <input type='text' ng-model="adjective" ng-init="adjective='adjective'">
-  </div>
-	
-</section>
+<div class='container' >
 
-<!-- placed span along the markup so that I could change the background color. -->
+<!-- <div class='container' > -->
+  <section class='userInput'>
+  <p> Provide the following words</p>
+    <div class='response' >
+      <!-- will need to add name ex:name.female to all ng-model -->
+      <!-- <input type='text' ng-model="name.female" ng-init="name.female='female name'" placeholder='female name'> -->
+      <input type="text" ng-model='namectrl.response.female'
+       placeholder='female name'>
 
-<section class='userOutput'>
-	<p>  <span>{{female}}</span> was a {{job}} who loved technology. Although she loved parts of her job, she absolutely hated  <span>{{tedious}} </span> and <span>{{dirty}}</span>. So, {{female}} met with her life mentor <span>{{celebrity}}</span> who told her to learn how to <span>{{useless}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{useless}}</span> so she studied programming instead. 
- </p>
+      <input type='text' ng-model="namectrl.response.job"  placeholder='job title'>
+      <input type='text' ng-model="namectrl.response.tedious"  placeholder='tedious task'>
+    </div>
+    <div class='response'> 
+    <input type='text' ng-model="namectrl.response.dirty" placeholder="dirty task">
+      <input type='text' ng-model="namectrl.response.celebrity" placeholder="celebrity">
+      <input type='text' ng-model="namectrl.response.useless" placeholder="useless skill">
+    </div>
+    <div class='response'> 
 
-	<p>What a great decision! With her new skills, <span>{{female}} </span>built a(n) <span> {{adjective}} </span> robot named <span>{{obnoxious}}</span> that not only loved {{dirty}} but did it <span>{{huge}}</span> faster. </p>
-</section>
+      <input type='text' ng-model="namectrl.response.obnoxious" placeholder="obnoxious celebrity">
+      <input type='text' ng-model="namectrl.response.huge" placeholder="something huge">
+      <input type='text' ng-model="namectrl.response.adjective" placeholder="adjective">
+    </div>
+  	
+  </section>
+
+  <!-- placed span along the markup so that I could change the background color. -->
+
+  <section class='userOutput'>
+  	<p>  <span>{{namectrl.response.female}}</span> was a <span>{{namectrl.response.job}}</span> who loved technology. Although she loved parts of her job, she absolutely hated  <span>{{namectrl.response.tedious}} </span> and <span>{{namectrl.response.dirty}}</span>. So, {{namectrl.response.female}} met with her life mentor <span>{{namectrl.response.celebrity}}</span> who told her to learn how to <span>{{namectrl.response.useless}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{namectrl.response.useless}}</span> so she studied programming instead. 
+   </p>
+
+  	<p>What a great decision! With her new skills, <span>{{namectrl.response.female}} </span>built a(n) <span> {{namectrl.response.adjective}} </span> robot named <span>{{namectrl.response.obnoxious}}</span> that not only loved {{namectrl.response.dirty}} but did it <span>{{namectrl.response.huge}}</span> faster. </p>
+  </section>
+
+</div>
 
 <footer>
   
 </footer>
 
-  
- <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+<script src="app.js"></script>
+ <!-- // <script src="main.js"></script> -->
+ 
 
 
 </body>
