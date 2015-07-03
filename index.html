@@ -29,7 +29,7 @@
 <div class='container' >
 
 <!-- <div class='container' > -->
-  <section class='userInput'>
+  <section class='userInput' ng-hide="data">
   <p> Provide the following words</p>
     <div class='response' >
       <!-- will need to add name ex:name.female to all ng-model -->
@@ -44,6 +44,7 @@
     <input type='text' ng-model="namectrl.response.dirty" placeholder="dirty task">
       <input type='text' ng-model="namectrl.response.celebrity" placeholder="celebrity">
       <input type='text' ng-model="namectrl.response.useless" placeholder="useless skill">
+
     </div>
     <div class='response'> 
 
@@ -51,13 +52,19 @@
       <input type='text' ng-model="namectrl.response.huge" placeholder="something huge">
       <input type='text' ng-model="namectrl.response.adjective" placeholder="adjective">
     </div>
+
+    <!-- toggle button will show and hide section 1 and 2 -->
+    <div class= "submission-attempts"> 
+    <input ng-submit='data' value="Toggle" ng-click="data = !data" class="submission"/>
+    </div>
+
   	
   </section>
 
   <!-- placed span along the markup so that I could change the background color. -->
 
   <section class='userOutput'>
-  	<p>  <span>{{namectrl.response.female}}</span> was a <span>{{namectrl.response.job}}</span> who loved technology. Although she loved parts of her job, she absolutely hated  <span>{{namectrl.response.tedious}} </span> and <span>{{namectrl.response.dirty}}</span>. So, {{namectrl.response.female}} met with her life mentor <span>{{namectrl.response.celebrity}}</span> who told her to learn how to <span>{{namectrl.response.useless}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{namectrl.response.useless}}</span> so she studied programming instead. 
+  	<p>  <span>{{namectrl.response.female}}</span> was a <span>{{namectrl.response.job}}</span> who loved technology. Although she loved parts of her job, she absolutely hated  <span>{{namectrl.response.tedious}} </span> and <span>{{namectrl.response.dirty}}</span>. So, {{namectrl.response.female}} met with her life mentor <span>{{namectrl.response.celebrity}}</span> who told her to learn how to <span>{{namectrl.response.useless}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{namectrl.response.useless}}</span> so she studied programming instead. <span> {{namectrl.response.female}} <figcaption> a terrible job! </figcaption> </span>
    </p>
 
   	<p>What a great decision! With her new skills, <span>{{namectrl.response.female}} </span>built a(n) <span> {{namectrl.response.adjective}} </span> robot named <span>{{namectrl.response.obnoxious}}</span> that not only loved {{namectrl.response.dirty}} but did it <span>{{namectrl.response.huge}}</span> faster. </p>
